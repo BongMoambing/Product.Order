@@ -1,0 +1,44 @@
+﻿@using Product.Order.Models;
+@model Products;
+@{
+    ViewData["Title"] = "GetOrderList";
+}
+
+<h1>GetOrderList</h1>
+
+
+
+<div>
+       <div>
+           <div> Search Product Id </div>
+            <div>
+                  <input id="ProductId" name="ProductId" type="text" />
+            </div>           
+          <a asp-controller="OrderTranction" asp-action="GetById"  >Search button
+          </a>
+       </div>
+
+    <div class="row">     
+        <div>
+            @Html.Label("Product Id")
+            @Html.TextBoxFor(m => m.ProductId)          
+        </div>     
+        <div>
+            @Html.Label("Cost")
+            @Html.TextBoxFor(m => m.Cost)
+        </div>
+    </div>
+     <div class="row">     
+        <div>
+            @Html.Label("Product Name")
+            @Html.TextBoxFor(m => m.ProductId)          
+        </div>     
+        <div>
+            @Html.Label("Qty")
+            <input id="qty" name="Qty" type="text" />
+        </div>
+    </div>
+
+
+
+</div>
