@@ -1,7 +1,9 @@
-﻿@using Product.Order.Models;
-@model Products;
+﻿@using Product.Order.ViewModel;;
+
+@model OrderDetails;
 @{
     ViewData["Title"] = "GetOrderList";
+
 }
 
 <h1>GetOrderList</h1>
@@ -21,17 +23,17 @@
     <div class="row">     
         <div>
             @Html.Label("Product Id")
-            @Html.TextBoxFor(m => m.ProductId)          
+            @Html.TextBoxFor(m => m.ProductList.ProductId)          
         </div>     
         <div>
             @Html.Label("Cost")
-            @Html.TextBoxFor(m => m.Cost)
+            @Html.TextBoxFor(m => m.ProductList.Cost)
         </div>
     </div>
      <div class="row">     
         <div>
             @Html.Label("Product Name")
-            @Html.TextBoxFor(m => m.ProductId)          
+            @Html.TextBoxFor(m => m.ProductList.ProductName)
         </div>     
         <div>
             @Html.Label("Qty")
@@ -39,6 +41,26 @@
         </div>
     </div>
 
+            <table>
+                <tr>
+                    <td>File Name</td>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Info</td>
+                </tr>
+        @foreach (var item in Model.OrderItem)
+                {
+                    <tr>
+                        <td>@item.ProductName</td>
+                        <td>@item.Cost</td>
+                        <td>@item.Qty</td>
+                        <td>@item.Amount</td>
+                         <td><button>Remove</button></td>
+                    </tr>
+                }
+            </table>
+        }
+    
 
 
 </div>

@@ -1,6 +1,6 @@
 ﻿namespace Product.Order.Models;
 
-public class Order
+public class Orders
 {
     public int OrderId { get; set; }
     public int ProductId { get; set; }
